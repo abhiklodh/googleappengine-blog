@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="home_text">
+    <p>Hi! I'm Abhik, a programmer, currently studying At birla high school and my class's site is  <a href="http://abhiklodhclass8e.appspot.com/">abhiklodhclass8e</a>
+    If you want to contact me, <a href="mailto: lodhabhik@gmail.com">email</a> is best</p>
+</div>
+<div class="main_listing">
+    <ul class="listing">
+    {% for post in posts %}
+        <li>
+            <a href="/post/{{post.key().id()}}">{{ post.subject }}</a> <span class="time">{{ post.created.strftime('%d %b, %Y') }}</span>
+        </li>
+    {% endfor %}
+</div>
+{% endblock %}
